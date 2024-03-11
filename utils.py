@@ -210,3 +210,52 @@ def normalize(t: torch.Tensor) -> torch.Tensor:
         return t
     normalized_t = (t - mean) / std
     return normalized_t
+
+def my_function(k):
+    # Validate that 'k' is an integer
+    if not isinstance(k, int):
+        raise ValueError("'k' must be an integer.")
+
+    # Validate that 'k' is a positive integer
+    if k <= 0:
+        raise ValueError("'k' must be a positive integer.")
+
+    # Proceed with the function logic
+    # ...
+
+def read_file(file):
+    try:
+        with open(file, 'r') as file:
+            # Read the content of the file
+            content = file.readlines()
+        # Process the content further if needed
+        return content
+    except FileNotFoundError:
+        print(f"Error: File '{file}' not found.")
+    except PermissionError:
+        print(f"Error: Permission denied while accessing '{file}'.")
+    except Exception as e:
+        print(f"An error occurred while reading '{file}': {e}")
+        
+if __name__ == "__main__": 
+    # condition-based
+    while condition:
+        # Loop body
+        if some_condition:
+            break
+    # time-based
+    import time
+    start_time = time.time()
+    while condition:
+        # Loop body
+        if time.time() - start_time > TIMEOUT_SECONDS:
+            break
+    # counter-based
+    counter = 0
+    while condition:
+        # Loop body
+        counter += 1
+        if counter > MAX_ITERATIONS:
+            break
+
+
